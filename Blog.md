@@ -1,10 +1,9 @@
 ## Training and Evaluating a Jupyter Notebook Data Science Assistant
 
 
-In the past few years, using machine learning to intelligently autofill and generate text has taken quite a leap. It started with a single word auto-compete on mobile keywords, to entire phrase completion on GMail's smart compose, to writing an entire narrative fiction using GPT3 these days. 
+In the past few years, using machine learning to intelligently autofill and generate text has taken quite a leap. It started with a single word auto-compete on mobile keywords, to entire phrase completion on [GMail's smart compose](https://ai.googleblog.com/2018/05/smart-compose-using-neural-networks-to.html), to [writing an entire narrative fiction using GPT3](https://www.gwern.net/GPT-3) these days. 
 
-
-A similar trend has been in effect, in the genre of developer productivity tools. It started with a single code token auto-compete using IntelliSense in VSCode, to entire phrase completion using Line Completion, to writing an entire method body from natural language description using powerful models like PyMT5 and Codex.
+A similar trend has been in effect, in the genre of developer productivity tools. It started with a single code token auto-compete using [IntelliSense in VSCode](https://code.visualstudio.com/docs/editor/intellisense), to entire phrase completion using Line Completion [1], to writing an entire method body from natural language description using powerful models like PyMT5 [2] and Codex [3].
 
 Another area in Natural Language Processing, which has seen enormous progress is transfer learning and pre-training strategies. Using an abundant corpus of textual data available on the internet, and training transformer models with different pretraining objectives, has led to huge progress in language understanding. Be it decoder models like GPT predicting the next word, or encoder models like BERT filling in the missing word or sequence-to-sequence models like BART and T5 solving the span masking problem. 
 
