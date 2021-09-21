@@ -1,4 +1,4 @@
-## A Data Science Assistance writing code in Jupyter Notebook
+## Training and Evaluating a Jupyter Notebook Data Science Assistant
 
 
 In the past few years, using machine learning to intelligently autofill and generate text has taken quite a leap. It started with a single word auto-compete on mobile keywords, to entire phrase completion on GMail's smart compose, to writing an entire narrative fiction using GPT3 these days. 
