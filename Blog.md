@@ -10,6 +10,14 @@ Another area in Natural Language Processing, which has seen enormous progress is
 
 Building upon the shoulders of these giants, we introduce JuPyT5, a model trained for data science code-generation, using a new pretraining objective of code infilling. The code infilling objective is fill in the blanks, but applied to a document level instead of word level. Instead of masking out a single word in the corpus, code infilling masks out an entire code block, say a function, and the objective is to predict the missing function given the entire code context. In the example below, the code cell is masked and given the context of data loading, problem statement, and assert statements, JuPyT5 is expected to generate the missing code to replace the string the dataframe column. 
 
+<p align="center">
+<img src="pandas-example.png" width="600">
+</p>
+
+  
+<!-- ![alt text](pandas-example.png | width=100) -->
+
+
 Another challenge with language models preforming code generation is, how do we evaluate these models? Historically generated text from a language model have been evaluated using lexical word overlap using BLEU, ROUGE score. However, it would naive to assume that any form of token overlap metric might be able to successfully evaluate code generation. 
 
 We explore the area of pedagogical learning and how we can assist students and developers alike, solving data science problems. Problems such as manipulating pandas dataframe, translating complex latex equations to code or training a machine learning model. 
