@@ -18,6 +18,10 @@ The DSP dataset consists of 1119 data-science problems, along with unit-test cas
 The problems in DSP range from computing gradient backpropagation, performing complex pandas operations on tables to writing and training scikitlearn models. 
 
 
+<p align="center">
+<img src="nll-loss.png" width="600">
+</p>
+
 
 
 
