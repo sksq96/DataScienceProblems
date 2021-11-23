@@ -49,6 +49,9 @@ We evaluate the performance of JuPyT5 on the Data Science Problems benchmark. Fo
 We observe that the code-infilling objective in JuPyT5 outperforms the baseline model without the future context, by 40%, when using 100 samples. 
 
 
+<p align="center">
+<img src="result-infilling.png" width="600">
+</p>
 
 
 
