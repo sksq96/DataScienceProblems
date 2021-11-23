@@ -10,19 +10,18 @@ palindromic subsequence among others.
 In this work, we introduce a benchmark dataset called, Data Science Problems (DSP), a code benchmark, which includes data-science programming tasks such as, implementing the negative log bernoulli loss function in PyTorch, performing string operations on Pandas series after reading a csv file in a DataFrame, and training a machine learning model in scikit-learn. 
 
 
-<p align="center">
-<img src="pandas-example.png" width="600">
-</p>
-
-
 ### Data Science Problems Dataset
 
 The DSP dataset consists of 1119 data-science problems, along with unit-test cases to evaluate the code generation from language models. The problems in DPS are collected from data-science assignments presented to students in Jupyter Notebooks for various data-science and machine learning courses. Specifically, we used `nbgrader`, a tool used by instructors to create and validate the assignments, to curated student solution notebooks from Github. In total, the DPS is a collection of 306 notebooks with an average of 3.6 problems per notebook, and all are executable with data dependencies in a default Anaconda environment. 
 
-The 
+
+The problems in DSP range from computing gradient backpropagation, performing complex pandas operations on tables to writing and training scikitlearn models. 
 
 
-### JuPyT5
+
+
+
+### JuPyT5 Model
 
 
 In the past few years, using machine learning to intelligently autofill and generate text has taken quite a leap. It started with a single word auto-compete on mobile keywords, to entire phrase completion on [GMail's smart compose](https://ai.googleblog.com/2018/05/smart-compose-using-neural-networks-to.html), to [writing an entire narrative fiction using GPT3](https://www.gwern.net/GPT-3) these days. 
@@ -31,17 +30,30 @@ A similar trend has been in effect, in the genre of developer productivity tools
 
 Another area in Natural Language Processing, which has seen enormous progress is transfer learning and pre-training strategies. Using an abundant corpus of textual data available on the internet, and training transformer models with different pretraining objectives, has led to huge progress in language understanding. Be it decoder models like GPT predicting the next word, or encoder models like BERT filling in the missing word or sequence-to-sequence models like BART and T5 solving the span masking problem. 
 
-Building upon the shoulders of these giants, we introduce JuPyT5, a model trained for data science code-generation, using a new pretraining objective of code infilling. The code infilling objective is fill in the blanks, but applied to a document level instead of word level. Instead of masking out a single word in the corpus, code infilling masks out an entire code block, say a function, and the objective is to predict the missing function given the entire code context. In the example below, the code cell is masked and given the context of data loading, problem statement, and assert statements, JuPyT5 is expected to generate the missing code to replace the string the dataframe column. 
+Building upon the shoulders of these giants, we introduce JuPyT5, a model trained for data science code-generation, using a new pretraining objective of code-infilling. The code-infilling objective is fill in the blanks, but applied to a document level instead of word level. Instead of masking out a single word in the corpus, code infilling masks out an entire code block, say a function, and the objective is to predict the missing function given the entire code context. In the example below, the code cell is masked and given the context of data loading, problem statement, and assert statements, JuPyT5 is expected to generate the missing code to replace the string the dataframe column. 
+
+
+<p align="center">
+<img src="pandas-example.png" width="600">
+</p>
+
+
+### Benchmark
+
+We evaluate the performance of JuPyT5 on the Data Science Problems benchmark. For each problem, using the code-infilling objective, JuPyT5 is provided with 3 context cells prior to the solution cell and the unit-test in the next cell. A DSP problem is marked passed if and only if the generated code passes the unit test defined in the grading cell below it. We use the pass@k metric to evaluate the unbiased probability of the model correctly solving the problem in k attempts.
+
+We observe that the code-infilling objective in JuPyT5 outperforms the baseline model without the future context, by 40%, when using 100 samples. 
 
 
 
-  
-<!-- ![alt text](pandas-example.png | width=100) -->
 
 
-Another challenge with language models preforming code generation is, how do we evaluate these models? Historically generated text from a language model have been evaluated using lexical word overlap using BLEU, ROUGE score. However, it would naive to assume that any form of token overlap metric might be able to successfully evaluate code generation. 
+
+
+<!-- Another challenge with language models preforming code generation is, how do we evaluate these models? Historically generated text from a language model have been evaluated using lexical word overlap using BLEU, ROUGE score. However, it would naive to assume that any form of token overlap metric might be able to successfully evaluate code generation. 
 
 We explore the area of pedagogical learning and how we can assist students and developers alike, solving data science problems. Problems such as manipulating pandas dataframe, translating complex latex equations to code or training a machine learning model. 
+ -->
 
 
 
