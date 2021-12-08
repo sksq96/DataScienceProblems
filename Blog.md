@@ -46,7 +46,7 @@ Building upon the shoulders of these giants, we introduce JuPyT5, a model traine
 
 We evaluate the performance of JuPyT5 on the Data Science Problems benchmark. For each problem, using the code-infilling objective, JuPyT5 is provided with 3 context cells prior to the solution cell and the unit-test in the next cell. A DSP problem is marked passed if and only if the generated code passes the unit test defined in the grading cell below it. We use the pass@k metric to evaluate the unbiased probability of the model correctly solving the problem in k attempts.
 
-We observe that the code-infilling objective in JuPyT5 outperforms the baseline model without the future context, by 40%, when using 100 samples. 
+When drawing 1 sample, JuPyT5 is able to solve about 33% of all the problems, which about about the same accuracy, when the baseline model is given 100 attempts. Further, we observe that the code-infilling objective in JuPyT5 outperforms the baseline model without the future context, by 40%, when using 100 samples. 
 
 
 <p align="center">
@@ -54,6 +54,24 @@ We observe that the code-infilling objective in JuPyT5 outperforms the baseline 
 </p>
 
 
+<p align="center">
+<img src="results.png" width="600">
+</p>
+
+<!-- TODO: Example here -->
+<!-- TOTO:  -->
+
+We benchmarked the performance of JuPyT5 on Codex's HumanEval and Program Synthesis's Mostly Basic Programming Problems (MBPP) datasets. HumanEval is a collection of 164 problems, which features Python signatures containing doctest unit tests and natural language docstring descriptions of problems to be solve. Codex beats JuPyT5 on HumanEval except when using a much smaller 85M parameter model. One reason for this performance difference is, the different formatting between markdown cells, which JuPyT5 is trained on, and method docstrings, which Codex is trained on. 
+
+
+<p align="center">
+<img src="results-other.png" width="600">
+</p>
+
+JuPyT5 is able to beat the the Programming Synthesis (PS) model at the MBPP metric for all but their largest model. The PS model is trained mostly on English documents, so this performance gap is not as surprising. 
+
+
+### Conclusion
 
 
 
